@@ -1,12 +1,12 @@
 "use client";
 
 const SCENARIOS = [
-  { num: 1, title: "Global Data Protection Compliance Roadmap" },
-  { num: 2, title: "Privacy Roles & Group Structure" },
-  { num: 3, title: "Ex-Employee Data Incident" },
-  { num: 4, title: "AI Support Chatbot" },
-  { num: 5, title: '"Parrot" Feedback Platform' },
-  { num: 6, title: "In-App Advertising (EU & Morocco)" },
+  { num: 1, title: "Global Data Protection Compliance Roadmap", slideIndex: 2 },
+  { num: 2, title: "Privacy Roles & Group Structure", slideIndex: 8 },
+  { num: 3, title: "Ex-Employee Data Incident", slideIndex: 13 },
+  { num: 4, title: "AI Support Chatbot", slideIndex: 19 },
+  { num: 5, title: '"Parrot" Feedback Platform', slideIndex: 26 },
+  { num: 6, title: "In-App Advertising (EU & Morocco)", slideIndex: 32 },
 ];
 
 export function IndexSlide() {
@@ -20,9 +20,16 @@ export function IndexSlide() {
       {/* 6 scenario cards in 2x3 grid - all same size */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {SCENARIOS.map((s) => (
-          <div
+          <button
             key={s.num}
-            className="relative flex items-start gap-4 p-5 h-[150px] rounded-2xl bg-white shadow-md overflow-hidden"
+            type="button"
+            onClick={() =>
+              window.dispatchEvent(
+                new CustomEvent("goToSlide", { detail: { index: s.slideIndex } })
+              )
+            }
+            aria-label={`Go to scenario ${s.num}: ${s.title}`}
+            className="relative flex items-start gap-4 p-5 h-[150px] rounded-2xl bg-white shadow-md overflow-hidden text-left cursor-pointer hover:opacity-90 transition-opacity"
           >
             {/* Folded corner effect */}
             <div className="absolute bottom-0 right-0 w-14 h-14 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
@@ -36,7 +43,7 @@ export function IndexSlide() {
             <span className="relative z-10 text-glovo-dark font-medium text-sm md:text-base leading-snug pt-1 flex-1">
               {s.title}
             </span>
-          </div>
+          </button>
         ))}
       </div>
     </div>
