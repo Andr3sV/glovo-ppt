@@ -129,10 +129,6 @@ export function Caso3Slide3() {
             ))}
           </ul>
         </div>
-        <div className="relative p-3 rounded-xl bg-glovo-teal/10 border-2 border-glovo-teal overflow-hidden min-h-0 md:col-span-3">
-          <p className="font-bold text-glovo-teal text-sm relative z-10">Decision Output:</p>
-          <p className="text-sm text-glovo-dark leading-tight relative z-10">Low Risk → Document & remediate | Probable Risk → Notify AEPD (72h) | High Risk → Notify AEPD + Individuals</p>
-        </div>
       </div>
     </div>
   );

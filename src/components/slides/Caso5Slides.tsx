@@ -120,6 +120,11 @@ export function Caso5Slide3() {
 }
 
 export function Caso5Slide5() {
+  const insufficientItems = [
+    "Free-text + team/dept/region → Author identifiable",
+    "Writing patterns + context → Third parties identifiable",
+    "Parrot Principle: Treat ALL free-text as personal data → Full GDPR applies",
+  ];
   const aiActItems = [
     "Prohibited: Workplace emotion inference (Art.5(1)(f))—vendor confirm/disable.",
     "Transparency: If analytics AI (Art.50)—employee notices",
@@ -129,31 +134,78 @@ export function Caso5Slide5() {
       <div className="w-full rounded-[100px] bg-glovo-teal text-white font-bold text-lg md:text-xl py-3 px-6 text-center mb-3 shrink-0">
         Additional Notes
       </div>
-      <div className="mb-3 flex justify-center shrink-0">
-        <span className="inline-block px-4 py-1.5 rounded-full bg-glovo-dark/10 text-glovo-dark font-semibold text-sm text-center">
-          Re-identification despite &quot;no direct identification&quot;
-        </span>
-      </div>
-      <div className="flex-1 min-h-0 overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div className="grid grid-cols-2 gap-3 md:col-span-2">
-          <div className="relative p-4 rounded-xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden min-h-0">
-            <div className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-xl" />
-            <h4 className="font-bold text-glovo-teal text-sm mb-1 relative z-10">Pseudonymized</h4>
-            <p className="text-sm text-glovo-dark relative z-10">Key reverses ID</p>
-          </div>
-          <div className="relative p-4 rounded-xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden min-h-0">
-            <div className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-xl" />
-            <h4 className="font-bold text-glovo-teal text-sm mb-1 relative z-10">Anon</h4>
-            <p className="text-sm text-glovo-dark relative z-10">Impossible re-ID</p>
+      <div className="flex-1 min-h-0 overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-2">
+        {/* No Direct Identifiers is Insufficient */}
+        <div className="relative p-3 rounded-xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden min-h-0">
+          <div className="absolute bottom-0 right-0 w-10 h-10 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-xl" />
+          <h4 className="font-bold text-glovo-teal text-sm mb-2 relative z-10">&quot;No Direct Identifiers&quot; is Insufficient</h4>
+          <ul className="space-y-1.5 relative z-10">
+            {insufficientItems.map((item, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-glovo-dark">
+                <span className="inline-flex items-center justify-center w-3.5 h-3.5 rounded border-2 border-glovo-teal bg-glovo-yellow/20 shrink-0 mt-0.5">
+                  <svg className="w-2 h-2 text-glovo-teal" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                <span className="leading-tight">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Pseudonymization vs. Anonymization */}
+        <div className="relative p-3 rounded-xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden min-h-0">
+          <div className="absolute bottom-0 right-0 w-10 h-10 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-xl" />
+          <h4 className="font-bold text-glovo-teal text-sm mb-2 relative z-10">Pseudonymization vs. Anonymization</h4>
+          <div className="overflow-x-auto relative z-10">
+            <table className="w-full text-xs border-collapse">
+              <thead>
+                <tr className="border-b border-glovo-teal/30">
+                  <th className="p-1.5 text-left font-semibold text-glovo-dark"></th>
+                  <th className="p-1.5 text-left font-semibold text-glovo-dark">Pseudonymized</th>
+                  <th className="p-1.5 text-left font-semibold text-glovo-dark">Anonymized</th>
+                </tr>
+              </thead>
+              <tbody className="text-glovo-dark">
+                <tr className="border-b border-gray-100">
+                  <td className="p-1.5 text-glovo-dark/80">ID</td>
+                  <td className="p-1.5">UserID → Hash123</td>
+                  <td className="p-1.5">Impossible re-ID</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="p-1.5 text-glovo-dark/80">Keys</td>
+                  <td className="p-1.5">Stored separately</td>
+                  <td className="p-1.5">No keys exist</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="p-1.5 text-glovo-dark/80">GDPR</td>
+                  <td className="p-1.5 font-semibold text-glovo-teal">STILL APPLIES</td>
+                  <td className="p-1.5">Does NOT apply</td>
+                </tr>
+                <tr>
+                  <td className="p-1.5 text-glovo-dark/80">Reversibility</td>
+                  <td className="p-1.5">Reversible with key</td>
+                  <td className="p-1.5">Irreversible</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div className="relative p-4 rounded-xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden min-h-0 md:col-span-2">
-          <div className="absolute bottom-0 right-0 w-10 h-10 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-xl" />
-          <p className="text-sm text-glovo-dark mb-2 relative z-10">
-            Even without shown names, free-text + team/dept/region segmentation can identify author or third parties. Parrot: Treat as personal—full GDPR applies.
+
+        {/* Key Takeaway */}
+        <div className="relative p-3 rounded-xl bg-glovo-yellow/30 border-2 border-glovo-teal overflow-hidden min-h-0 md:col-span-2">
+          <div className="absolute bottom-0 right-0 w-10 h-10 bg-gradient-to-tl from-glovo-teal/10 to-transparent rounded-tl-xl" />
+          <h4 className="font-bold text-glovo-teal text-sm mb-1.5 relative z-10">Key Takeaway</h4>
+          <p className="text-sm text-glovo-dark leading-tight relative z-10">
+            Pseudonymized data + context = 80% re-ID probability → Treat as personal data: Art. 6, 15-22, 35 ALL apply
           </p>
+        </div>
+
+        {/* EU AI Act Quick Check */}
+        <div className="relative p-3 rounded-xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden min-h-0 md:col-span-2">
+          <div className="absolute bottom-0 right-0 w-10 h-10 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-xl" />
           <h4 className="font-bold text-glovo-teal text-sm mb-2 relative z-10">EU AI Act Quick Check (If AI Used)</h4>
-          <ul className="space-y-1 relative z-10">
+          <ul className="space-y-1.5 relative z-10">
             {aiActItems.map((item, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-glovo-dark">
                 <span className="inline-flex items-center justify-center w-4 h-4 rounded border-2 border-glovo-teal bg-glovo-yellow/20 shrink-0 mt-0.5">{CHECK_ICON}</span>
