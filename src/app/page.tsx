@@ -46,6 +46,7 @@ import {
   Caso6Slide5,
   Caso6Slide6,
 } from "@/components/slides/Caso6Slides";
+import { ThankYouSlide } from "@/components/slides/ThankYouSlide";
 export default function Home() {
   return (
     <Presentation>
@@ -103,6 +104,8 @@ export default function Home() {
       <Caso6Slide4 />
       <Caso6Slide5 />
       <Caso6Slide6 />
+
+      <ThankYouSlide />
     </Presentation>
   );
 }
