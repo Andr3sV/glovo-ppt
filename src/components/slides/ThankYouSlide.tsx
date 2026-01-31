@@ -1,21 +1,33 @@
 "use client";
 
+import PixelTransition from "@/components/ui/PixelTransition";
+
 export function ThankYouSlide() {
   return (
     <div className="w-full flex flex-col items-center justify-center min-h-[500px]">
       <div className="relative w-full max-w-2xl">
-        <div className="relative w-full rounded-3xl bg-white shadow-xl overflow-hidden p-12 md:p-16">
-          <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-3xl" />
-
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-glovo-dark mb-6">
-              Thank you!
-            </h1>
-            <p className="text-lg md:text-xl text-glovo-dark">
-              Patricia Belestá / Lawyer
-            </p>
-          </div>
-        </div>
+        <PixelTransition
+          firstContent={
+            <div className="w-full h-full flex flex-col items-center justify-center p-12 md:p-16">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-glovo-dark">
+                Thank you!
+              </h1>
+            </div>
+          }
+          secondContent={
+            <div className="w-full h-full flex flex-col items-center justify-center p-12 md:p-16">
+              <p className="text-2xl md:text-3xl font-bold text-glovo-dark">
+                Patricia Belestá / Lawyer
+              </p>
+            </div>
+          }
+          gridSize={8}
+          pixelColor="#00a082"
+          once={false}
+          animationStepDuration={0.4}
+          aspectRatio="56.25%"
+          className="shadow-xl"
+        />
       </div>
     </div>
   );

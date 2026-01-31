@@ -1,5 +1,8 @@
 "use client";
 
+import Image from "next/image";
+import PixelTransition from "@/components/ui/PixelTransition";
+
 export function TitleSlide() {
   return (
     <div className="relative w-full min-h-[500px] flex flex-col">
@@ -12,20 +15,39 @@ export function TitleSlide() {
         </p>
       </div>
 
-      {/* Central white box with title */}
+      {/* Central white box with title + pixel transition to logo */}
       <div className="flex-1 flex items-center justify-center px-6 py-12">
-        <div className="relative bg-white rounded-3xl shadow-xl p-12 md:p-16 w-full max-w-2xl">
-          {/* Page curl effect */}
-          <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-3xl" />
-
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-glovo-dark uppercase tracking-tight mb-3">
-              Glovo Data Privacy
-            </h1>
-            <p className="text-xl md:text-2xl text-glovo-dark uppercase tracking-wide font-normal">
-              Business Case Interview
-            </p>
-          </div>
+        <div className="relative w-full max-w-2xl">
+          <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-3xl z-20 pointer-events-none" />
+          <PixelTransition
+            firstContent={
+              <div className="w-full h-full flex flex-col items-center justify-center p-12 md:p-16 text-center">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-glovo-dark uppercase tracking-tight mb-6 md:mb-8">
+                  Glovo Data Privacy
+                </h1>
+                <p className="text-xl md:text-2xl text-glovo-dark uppercase tracking-wide font-normal">
+                  Business Case Interview
+                </p>
+              </div>
+            }
+            secondContent={
+              <div className="w-full h-full flex items-center justify-center p-8 md:p-12">
+                <Image
+                  src="/logoglovo.png"
+                  alt="Glovo logo"
+                  width={200}
+                  height={200}
+                  className="object-contain w-32 h-32 md:w-48 md:h-48"
+                />
+              </div>
+            }
+            gridSize={8}
+            pixelColor="#00a082"
+            once={false}
+            animationStepDuration={0.4}
+            aspectRatio="56.25%"
+            className="shadow-xl"
+          />
         </div>
       </div>
 
