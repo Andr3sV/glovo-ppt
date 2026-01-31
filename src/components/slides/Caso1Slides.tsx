@@ -310,37 +310,94 @@ export function Caso1Slide5() {
     {
       num: 10,
       title: "Security Controls (Art. 32)",
-      desc: "IAM/MFA/RBAC, TLS/AES-256 encryption, DLP (no personal cloud), full logging/monitoring. DOC: Security policy, tech specs, implementation checklist/tests.",
+      bullets: [
+        "IAM/MFA/RBAC, TLS/AES-256 encryption, DLP (no personal cloud), full logging/monitoring",
+        "DOC: Security policy, tech specs, implementation checklist/tests",
+      ],
     },
     {
       num: 11,
       title: "Vendors/Transfers (Arts. 28/44-49)",
-      desc: "Audit processors (cloud/payments), DPAs w/ subs/audits; SCCs/TIAs for non-adequate. DOC: Vendor matrix, signed DPAs, due diligence reports, transfer register.",
+      bullets: [
+        "Audit processors (cloud/payments), DPAs w/ subs/audits; SCCs/TIAs for non-adequate",
+        "DOC: Vendor matrix, signed DPAs, due diligence reports, transfer register",
+      ],
     },
     {
       num: 12,
       title: "Training/Audits/Continuous",
-      desc: "Mandatory onboarding/annual by role; semi-annual audits; KPIs (DSAR time/breaches/training%). DOC: Training plans, audit reports, compliance dashboard, regulator evidence pack.",
+      bullets: [
+        "Mandatory onboarding/annual by role; semi-annual audits; KPIs (DSAR time/breaches/training%)",
+        "DOC: Training plans, audit reports, compliance dashboard, regulator evidence pack",
+      ],
     },
   ];
   return (
-    <SlideCard>
-      <PhaseBanner>Phase 2 – Steps 10-12</PhaseBanner>
-      <p className="text-glovo-dark font-semibold mb-4">Secure & Sustain</p>
-      <div className="space-y-4">
-        {steps.map((s) => (
-          <div key={s.num} className="flex gap-3 p-3 rounded-xl bg-gray-50">
-            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-glovo-yellow text-glovo-teal font-bold shrink-0 text-sm">
-              {s.num}
-            </span>
-            <div>
-              <h4 className="font-bold text-glovo-dark">{s.title}</h4>
-              <p className="text-sm text-glovo-dark/90">{s.desc}</p>
-            </div>
-          </div>
-        ))}
+    <div className="w-full flex flex-col h-full">
+      {/* Main title banner */}
+      <div className="w-full rounded-[100px] bg-glovo-teal text-white font-bold text-xl md:text-2xl py-4 px-8 text-center mb-4 shrink-0">
+        Phase 2 – Steps 10-12
       </div>
-    </SlideCard>
+      {/* Subtitle */}
+      <p className="text-glovo-dark font-semibold text-sm mb-6 text-center">
+        Secure & Sustain
+      </p>
+      {/* Steps - grid layout: 2 top, 1 bottom centered */}
+      <div className="flex-1 min-h-0 overflow-y-auto">
+        <div className="flex flex-col gap-4">
+          {/* Top row: 2 cards centered */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {steps.slice(0, 2).map((s) => (
+              <div
+                key={s.num}
+                className="relative p-5 rounded-2xl bg-white shadow-md border border-gray-100 overflow-hidden w-full lg:w-[calc(33.333%-0.5rem)] min-w-[240px] max-w-[380px]"
+              >
+                <div className="absolute bottom-0 right-0 w-12 h-12 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-glovo-teal text-white font-bold text-lg shrink-0">
+                    {s.num}
+                  </span>
+                  <h4 className="font-bold text-glovo-teal text-base">{s.title}</h4>
+                </div>
+                <ul className="space-y-1.5 relative z-10">
+                  {s.bullets.map((bullet, j) => (
+                    <li key={j} className="flex gap-2 text-xs text-glovo-dark/90 leading-relaxed">
+                      <span className="text-glovo-teal font-bold shrink-0">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          {/* Bottom row: 1 card centered */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {steps.slice(2, 3).map((s) => (
+              <div
+                key={s.num}
+                className="relative p-5 rounded-2xl bg-white shadow-md border border-gray-100 overflow-hidden w-full lg:w-[calc(33.333%-0.5rem)] min-w-[240px] max-w-[380px]"
+              >
+                <div className="absolute bottom-0 right-0 w-12 h-12 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-glovo-teal text-white font-bold text-lg shrink-0">
+                    {s.num}
+                  </span>
+                  <h4 className="font-bold text-glovo-teal text-base">{s.title}</h4>
+                </div>
+                <ul className="space-y-1.5 relative z-10">
+                  {s.bullets.map((bullet, j) => (
+                    <li key={j} className="flex gap-2 text-xs text-glovo-dark/90 leading-relaxed">
+                      <span className="text-glovo-teal font-bold shrink-0">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -361,30 +418,58 @@ export function Caso1Slide6() {
     "Training/audit plans + dashboard",
   ];
   return (
-    <SlideCard>
-      <h2 className="text-2xl font-bold text-glovo-dark mb-6">Documentation Master List</h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="p-4 rounded-xl bg-glovo-teal/10 border-2 border-glovo-teal">
-          <h3 className="font-bold text-glovo-teal text-lg mb-3">Phase 1</h3>
-          <ul className="space-y-2 text-sm text-glovo-dark">
+    <div className="w-full flex flex-col h-full">
+      {/* Main title banner */}
+      <div className="w-full rounded-[100px] bg-glovo-teal text-white font-bold text-xl md:text-2xl py-4 px-8 text-center mb-6 shrink-0">
+        Documentation Master List
+      </div>
+      {/* Two checklist containers */}
+      <div className="grid md:grid-cols-2 gap-6 flex-1 min-h-0 overflow-y-auto">
+        {/* Phase 1 Checklist */}
+        <div className="relative p-6 rounded-2xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-14 h-14 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
+          <div className="flex items-center gap-3 mb-5">
+            <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-glovo-teal text-white font-bold text-lg shrink-0">
+              1
+            </span>
+            <h3 className="font-bold text-glovo-teal text-xl">Phase 1</h3>
+          </div>
+          <ul className="space-y-3 relative z-10">
             {phase1.map((item, i) => (
-              <li key={i} className="flex gap-2">
-                <span className="text-glovo-teal">•</span> {item}
+              <li key={i} className="flex items-start gap-3 text-sm text-glovo-dark">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-md border-2 border-glovo-teal bg-glovo-yellow/20 shrink-0 mt-0.5">
+                  <svg className="w-3 h-3 text-glovo-teal" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                <span className="leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
         </div>
-        <div className="p-4 rounded-xl bg-glovo-teal/10 border-2 border-glovo-teal">
-          <h3 className="font-bold text-glovo-teal text-lg mb-3">Phase 2</h3>
-          <ul className="space-y-2 text-sm text-glovo-dark">
+        {/* Phase 2 Checklist */}
+        <div className="relative p-6 rounded-2xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-14 h-14 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
+          <div className="flex items-center gap-3 mb-5">
+            <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-glovo-teal text-white font-bold text-lg shrink-0">
+              2
+            </span>
+            <h3 className="font-bold text-glovo-teal text-xl">Phase 2</h3>
+          </div>
+          <ul className="space-y-3 relative z-10">
             {phase2.map((item, i) => (
-              <li key={i} className="flex gap-2">
-                <span className="text-glovo-teal">•</span> {item}
+              <li key={i} className="flex items-start gap-3 text-sm text-glovo-dark">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-md border-2 border-glovo-teal bg-glovo-yellow/20 shrink-0 mt-0.5">
+                  <svg className="w-3 h-3 text-glovo-teal" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                <span className="leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
         </div>
       </div>
-    </SlideCard>
+    </div>
   );
 }

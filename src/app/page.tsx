@@ -3,6 +3,7 @@
 import { Presentation } from "@/components/Presentation";
 import { TitleSlide } from "@/components/slides/TitleSlide";
 import { IndexSlide } from "@/components/slides/IndexSlide";
+import { Scenario1IntroSlide } from "@/components/slides/Scenario1IntroSlide";
 import {
   Caso1Slide1,
   Caso1Slide2,
@@ -52,6 +53,7 @@ export default function Home() {
     <Presentation>
       <TitleSlide />
       <IndexSlide />
+      <Scenario1IntroSlide />
 
       {/* CASO 1 */}
       <Caso1Slide1 />
