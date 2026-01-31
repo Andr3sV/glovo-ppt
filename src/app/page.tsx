@@ -46,8 +46,6 @@ import {
   Caso6Slide5,
   Caso6Slide6,
 } from "@/components/slides/Caso6Slides";
-import { SlideCard } from "@/components/SlideCard";
-
 export default function Home() {
   return (
     <Presentation>
@@ -69,6 +67,8 @@ export default function Home() {
       <Caso2Slide3 />
       <Caso2Slide4 />
 
+      <ScenarioIntroSlide num={3} title="Scenario" description="Breach Response Playbook" />
+
       {/* CASO 3 */}
       <Caso3Slide1 />
       <Caso3Slide2 />
@@ -76,15 +76,16 @@ export default function Home() {
       <Caso3Slide4 />
       <Caso3Slide5 />
 
+      <ScenarioIntroSlide num={4} title="Scenario" description="AI Chatbot Risk Assessment" />
+
       {/* CASO 4 */}
       <Caso4Slide1 />
       <Caso4Slide2 />
       <Caso4Slide3 />
-      <SlideCard header="AI Chatbot – Continued">
-        <p className="text-glovo-dark text-center py-8">Technical measures & user rights implementation (see previous slide)</p>
-      </SlideCard>
       <Caso4Slide5 />
       <Caso4Slide6 />
+
+      <ScenarioIntroSlide num={5} title="Scenario" description="Parrot Legal Memo" />
 
       {/* CASO 5 */}
       <Caso5Slide1 />
@@ -92,6 +93,8 @@ export default function Home() {
       <Caso5Slide3 />
       <Caso5Slide5 />
       <Caso5Slide6 />
+
+      <ScenarioIntroSlide num={6} title="Scenario" description="Enable Safe App Ads Now" />
 
       {/* CASO 6 */}
       <Caso6Slide1 />

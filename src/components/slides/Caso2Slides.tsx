@@ -1,7 +1,5 @@
 "use client";
 
-import { SlideCard, PhaseBanner } from "../SlideCard";
-
 export function Caso2Slide1() {
   const bullets = [
     "GDPR controller/processor definitions require deliberate structure",
@@ -15,7 +13,7 @@ export function Caso2Slide1() {
         The Right Privacy Architecture
       </div>
       {/* White container with subtitle and bullet points */}
-      <div className="relative flex-1 min-h-0 overflow-y-auto">
+      <div className="relative flex-1 min-h-0 overflow-hidden">
         <div className="relative p-8 rounded-2xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden">
           {/* Folded corner */}
           <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
@@ -66,7 +64,7 @@ export function Caso2Slide2() {
         </span>
       </div>
       {/* Content - two cards + bullet points */}
-      <div className="flex-1 min-h-0 overflow-y-auto space-y-6">
+      <div className="flex-1 min-h-0 overflow-hidden space-y-6">
         {/* Problem vs Solution cards - enhanced design */}
         <div className="grid md:grid-cols-2 gap-6">
           <div className="relative p-6 rounded-2xl bg-white shadow-xl border-2 border-red-200 overflow-hidden transition-shadow hover:shadow-2xl">
@@ -140,7 +138,7 @@ export function Caso2Slide3() {
         </span>
       </div>
       {/* Content */}
-      <div className="flex-1 min-h-0 overflow-y-auto space-y-6">
+      <div className="flex-1 min-h-0 overflow-hidden space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
           <div className="relative p-6 rounded-2xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden">
             <div className="absolute bottom-0 right-0 w-14 h-14 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
@@ -192,24 +190,51 @@ export function Caso2Slide3() {
 }
 
 export function Caso2Slide4() {
+  const bullets = [
+    "Third-Party Vendors: Standard processor contracts (DPAs); vendors act on Glovo's instructions",
+    "Cross-Border Transfers: Case-by-case risk assessment; deploy appropriate transfer mechanisms (adequacy decisions, Standard Contractual Clauses, BCRs)",
+    "Key Takeaway: Clear contractual chain preserves accountability from Group → Local Entity → Processor",
+  ];
   return (
-    <SlideCard>
-      <PhaseBanner>Processors & Transfers – Maintaining the Chain</PhaseBanner>
-      <h3 className="text-lg font-bold text-glovo-dark mb-4">Extending the Model: Processors and International Transfers</h3>
-      <div className="space-y-4">
-        <div className="p-4 rounded-xl bg-gray-50 border border-glovo-teal/30">
-          <p className="text-sm text-glovo-dark"><strong>Flow:</strong> Group → Local Controller → Processor</p>
+    <div className="w-full flex flex-col h-full">
+      <div className="w-full rounded-[100px] bg-glovo-teal text-white font-bold text-xl md:text-2xl py-4 px-8 text-center mb-4 shrink-0">
+        Processors & Transfers – Maintaining the Chain
+      </div>
+      <div className="mb-6 flex justify-center">
+        <span className="inline-block px-6 py-2 rounded-full bg-glovo-dark/10 text-glovo-dark font-semibold text-sm md:text-base text-center">
+          Extending the Model: Processors and International Transfers
+        </span>
+      </div>
+      <div className="flex-1 min-h-0 overflow-hidden space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="relative p-6 rounded-2xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden">
+            <div className="absolute bottom-0 right-0 w-14 h-14 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
+            <h4 className="font-bold text-glovo-teal mb-3">Flow</h4>
+            <p className="text-sm text-glovo-dark relative z-10">Group → Local Controller → Processor</p>
+          </div>
+          <div className="relative p-6 rounded-2xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden">
+            <div className="absolute bottom-0 right-0 w-14 h-14 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
+            <h4 className="font-bold text-glovo-teal mb-3">Cross-Border Transfers</h4>
+            <p className="text-sm text-glovo-dark relative z-10">Safeguards: SCCs, Adequacy Decisions</p>
+          </div>
         </div>
-        <div className="p-4 rounded-xl bg-glovo-teal/10 border-2 border-glovo-teal">
-          <h4 className="font-bold text-glovo-teal mb-2">Cross-Border Transfers</h4>
-          <p className="text-sm text-glovo-dark">Safeguards: SCCs, Adequacy Decisions</p>
+        <div className="relative p-6 rounded-2xl bg-white shadow-lg border-2 border-glovo-teal/30 overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-14 h-14 bg-gradient-to-tl from-gray-200 to-transparent rounded-tl-2xl" />
+          <h4 className="font-bold text-glovo-teal mb-4 text-base md:text-lg">Key Points</h4>
+          <ul className="space-y-3 relative z-10">
+            {bullets.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm text-glovo-dark">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-md border-2 border-glovo-teal bg-glovo-yellow/20 shrink-0 mt-0.5">
+                  <svg className="w-3 h-3 text-glovo-teal" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                <span className={`leading-relaxed flex-1 ${i === 2 ? "font-bold text-glovo-teal" : ""}`}>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-      <ul className="mt-6 space-y-2 text-sm text-glovo-dark">
-        <li><strong>Third-Party Vendors:</strong> Standard processor contracts (DPAs); vendors act on Glovo&apos;s instructions</li>
-        <li><strong>Cross-Border Transfers:</strong> Case-by-case risk assessment; deploy appropriate transfer mechanisms (adequacy decisions, Standard Contractual Clauses, BCRs)</li>
-        <li className="font-bold text-glovo-teal">Key Takeaway: Clear contractual chain preserves accountability from Group → Local Entity → Processor</li>
-      </ul>
-    </SlideCard>
+    </div>
   );
 }

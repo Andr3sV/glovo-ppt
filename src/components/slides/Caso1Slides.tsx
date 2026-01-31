@@ -161,7 +161,7 @@ export function Caso1Slide2() {
                 </div>
                 <ul className="space-y-1.5 relative z-10">
                   {s.bullets.map((bullet, j) => (
-                    <li key={j} className="flex gap-2 text-xs text-glovo-dark/90 leading-relaxed">
+                    <li key={j} className="flex gap-2 text-sm text-glovo-dark/90 leading-relaxed">
                       <span className="text-glovo-teal font-bold shrink-0">•</span>
                       <span>{bullet}</span>
                     </li>
@@ -186,7 +186,7 @@ export function Caso1Slide2() {
                 </div>
                 <ul className="space-y-1.5 relative z-10">
                   {s.bullets.map((bullet, j) => (
-                    <li key={j} className="flex gap-2 text-xs text-glovo-dark/90 leading-relaxed">
+                    <li key={j} className="flex gap-2 text-sm text-glovo-dark/90 leading-relaxed">
                       <span className="text-glovo-teal font-bold shrink-0">•</span>
                       <span>{bullet}</span>
                     </li>
@@ -265,7 +265,7 @@ export function Caso1Slide4() {
                 </div>
                 <ul className="space-y-1.5 relative z-10">
                   {s.bullets.map((bullet, j) => (
-                    <li key={j} className="flex gap-2 text-xs text-glovo-dark/90 leading-relaxed">
+                    <li key={j} className="flex gap-2 text-sm text-glovo-dark/90 leading-relaxed">
                       <span className="text-glovo-teal font-bold shrink-0">•</span>
                       <span>{bullet}</span>
                     </li>
@@ -290,7 +290,7 @@ export function Caso1Slide4() {
                 </div>
                 <ul className="space-y-1.5 relative z-10">
                   {s.bullets.map((bullet, j) => (
-                    <li key={j} className="flex gap-2 text-xs text-glovo-dark/90 leading-relaxed">
+                    <li key={j} className="flex gap-2 text-sm text-glovo-dark/90 leading-relaxed">
                       <span className="text-glovo-teal font-bold shrink-0">•</span>
                       <span>{bullet}</span>
                     </li>
@@ -361,7 +361,7 @@ export function Caso1Slide5() {
                 </div>
                 <ul className="space-y-1.5 relative z-10">
                   {s.bullets.map((bullet, j) => (
-                    <li key={j} className="flex gap-2 text-xs text-glovo-dark/90 leading-relaxed">
+                    <li key={j} className="flex gap-2 text-sm text-glovo-dark/90 leading-relaxed">
                       <span className="text-glovo-teal font-bold shrink-0">•</span>
                       <span>{bullet}</span>
                     </li>
@@ -386,7 +386,7 @@ export function Caso1Slide5() {
                 </div>
                 <ul className="space-y-1.5 relative z-10">
                   {s.bullets.map((bullet, j) => (
-                    <li key={j} className="flex gap-2 text-xs text-glovo-dark/90 leading-relaxed">
+                    <li key={j} className="flex gap-2 text-sm text-glovo-dark/90 leading-relaxed">
                       <span className="text-glovo-teal font-bold shrink-0">•</span>
                       <span>{bullet}</span>
                     </li>
