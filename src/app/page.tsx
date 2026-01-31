@@ -3,7 +3,7 @@
 import { Presentation } from "@/components/Presentation";
 import { TitleSlide } from "@/components/slides/TitleSlide";
 import { IndexSlide } from "@/components/slides/IndexSlide";
-import { Scenario1IntroSlide } from "@/components/slides/Scenario1IntroSlide";
+import { ScenarioIntroSlide } from "@/components/slides/Scenario1IntroSlide";
 import {
   Caso1Slide1,
   Caso1Slide2,
@@ -53,7 +53,7 @@ export default function Home() {
     <Presentation>
       <TitleSlide />
       <IndexSlide />
-      <Scenario1IntroSlide />
+      <ScenarioIntroSlide num={1} title="Scenario" description="Launch Global Data Protection Compliance" />
 
       {/* CASO 1 */}
       <Caso1Slide1 />
@@ -61,6 +61,7 @@ export default function Home() {
       <Caso1Slide4 />
       <Caso1Slide5 />
       <Caso1Slide6 />
+      <ScenarioIntroSlide num={2} title="Scenario" description="Glovo Group Privacy Structure" />
 
       {/* CASO 2 */}
       <Caso2Slide1 />
