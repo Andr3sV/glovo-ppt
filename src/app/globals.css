@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --glovo-yellow: #F2CC38;
+  --glovo-teal: #00a082;
+  --glovo-dark: #313131;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
