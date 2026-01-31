@@ -34,6 +34,12 @@ export function Presentation({ children }: PresentationProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [goNext, goPrev]);
 
+  useEffect(() => {
+    const handleGoToFirst = () => setCurrentSlide(0);
+    window.addEventListener("goToFirstSlide", handleGoToFirst);
+    return () => window.removeEventListener("goToFirstSlide", handleGoToFirst);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Logo */}

@@ -3,8 +3,12 @@
 import PixelTransition from "@/components/ui/PixelTransition";
 
 export function ThankYouSlide() {
+  const handleBackToTop = () => {
+    window.dispatchEvent(new CustomEvent("goToFirstSlide"));
+  };
+
   return (
-    <div className="w-full flex flex-col items-center justify-center min-h-[500px]">
+    <div className="w-full flex flex-col items-center justify-center min-h-[500px] gap-6">
       <div className="relative w-full max-w-2xl">
         <PixelTransition
           firstContent={
@@ -29,6 +33,12 @@ export function ThankYouSlide() {
           className="shadow-xl"
         />
       </div>
+      <button
+        onClick={handleBackToTop}
+        className="rounded-[100px] px-6 py-3 bg-glovo-teal text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-lg"
+      >
+        Back to top
+      </button>
     </div>
   );
 }
