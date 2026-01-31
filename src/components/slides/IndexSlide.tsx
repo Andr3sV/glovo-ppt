@@ -5,8 +5,8 @@ const SCENARIOS = [
   { num: 2, title: "Privacy Roles & Group Structure", slideIndex: 8 },
   { num: 3, title: "Ex-Employee Data Incident", slideIndex: 13 },
   { num: 4, title: "AI Support Chatbot", slideIndex: 19 },
-  { num: 5, title: '"Parrot" Feedback Platform', slideIndex: 26 },
-  { num: 6, title: "In-App Advertising (EU & Morocco)", slideIndex: 32 },
+  { num: 5, title: '"Parrot" Feedback Platform', slideIndex: 25 },
+  { num: 6, title: "In-App Advertising (EU & Morocco)", slideIndex: 31 },
 ];
 
 export function IndexSlide() {

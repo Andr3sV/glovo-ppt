@@ -19,9 +19,9 @@ export function ThankYouSlide() {
             </div>
           }
           secondContent={
-            <div className="w-full h-full flex flex-col items-center justify-center p-12 md:p-16">
+            <div className="w-full h-full flex flex-col items-center justify-center p-12 md:p-16 text-center">
               <p className="text-2xl md:text-3xl font-bold text-glovo-dark">
-                Patricia Belestá / Lawyer
+                Patricia Belestá / Data Privacy Lawyer
               </p>
             </div>
           }
